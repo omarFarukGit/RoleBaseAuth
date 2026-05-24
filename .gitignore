@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+
+# Runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional: Docker
+docker-compose.override.yml
+
+# Optional: testing
+jest-cache/
