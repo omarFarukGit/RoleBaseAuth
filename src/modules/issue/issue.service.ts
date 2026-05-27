@@ -12,7 +12,16 @@ const issueIntroDB = async (payload: any) => {
   );
   return result.rows[0];
 };
+const getAllIssuesFromDB = async () => {
+  const result = await pool.query(`
+        SELECT * FROM issues
+        `);
+
+  return result;
+};
 
 export const IssueService = {
   issueIntroDB,
+  getAllIssuesFromDB
 };
+
