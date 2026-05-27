@@ -21,14 +21,18 @@ const getAllIssuesFromDB = async () => {
 };
 
 const getSingleIssueFromDB = async (id: number) => {
-  const result = await pool.query(
+  const issue = await pool.query(
     `
     SELECT * FROM issues WHERE id=$1
     `,
     [id],
   );
 
-  return result.rows[0];
+  if (!issue) {
+    throw new Error("issue not found");
+  }
+
+  return issue.rows[0];
 };
 export const IssueService = {
   issueIntroDB,
