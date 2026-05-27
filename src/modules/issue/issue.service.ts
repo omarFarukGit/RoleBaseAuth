@@ -20,8 +20,18 @@ const getAllIssuesFromDB = async () => {
   return result;
 };
 
+const getSingleIssueFromDB = async (id: number) => {
+  const result = await pool.query(
+    `
+    SELECT * FROM issues WHERE id=$1
+    `,
+    [id],
+  );
+
+  return result.rows[0];
+};
 export const IssueService = {
   issueIntroDB,
-  getAllIssuesFromDB
+  getAllIssuesFromDB,
+  getSingleIssueFromDB,
 };
-
