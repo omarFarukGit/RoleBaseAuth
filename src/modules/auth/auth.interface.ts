@@ -6,9 +6,4 @@ export interface IUser {
   role?: string;
 }
 
-export interface IIusse {
-  id?: number;
-  title: string;
-  description: string;
-  status?: "open" | "resoveld";
-}
+
