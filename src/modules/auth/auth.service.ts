@@ -1,8 +1,9 @@
 import { pool } from "../../db/db";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import type { IUser } from "./auth.interface";
 
-const createUserIntroDB = async (payload: any) => {
+const createUserIntroDB = async (payload: IUser) => {
   const { name, email, password, role } = payload;
 
   const hashPassword = await bcrypt.hash(password, 10);
