@@ -1,4 +1,6 @@
+import type { JwtPayload } from "jsonwebtoken";
 import { pool } from "../../db/db";
+import type { IIusse } from "./issue.interface";
 
 const issueIntroDB = async (payload: any) => {
   const { id, title, description, status } = payload;
@@ -56,7 +58,13 @@ const deleteIssueFromDB = async (id: number) => {
   );
 };
 
-const updateIssueFromDB = async () => {};
+const updateIssueFromDB = async (
+  id: number,
+  payload: Partial<IIusse>,
+  user: JwtPayload,
+) => {
+  
+};
 
 export const IssueService = {
   issueIntroDB,
