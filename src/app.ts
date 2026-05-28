@@ -16,4 +16,12 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/api/auth", AuthRouter);
 app.use("/api/issues", IssueRoute);
 
+// handle not found route
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
 export default app;
