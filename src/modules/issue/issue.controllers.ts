@@ -51,8 +51,8 @@ const singleIsse = async (req: Request, res: Response) => {
   }
 };
 
-const deleteIssue=async(req:Request,res:Response)=>{
-    try {
+const deleteIssue = async (req: Request, res: Response) => {
+  try {
     const result = await IssueService.issueIntroDB(req.body);
     res.status(201).json({
       success: true,
@@ -65,11 +65,14 @@ const deleteIssue=async(req:Request,res:Response)=>{
       mesaage: error.message,
     });
   }
-}
+};
+
+const updateIssue = async (req: Request, res: Response) => {};
 
 export const IssueController = {
   createIsuue,
   getIssues,
   singleIsse,
-  deleteIssue
+  deleteIssue,
+  updateIssue,
 };

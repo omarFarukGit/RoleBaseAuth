@@ -55,9 +55,13 @@ const deleteIssueFromDB = async (id: number) => {
     [id],
   );
 };
+
+const updateIssueFromDB = async () => {};
+
 export const IssueService = {
   issueIntroDB,
   getAllIssuesFromDB,
   getSingleIssueFromDB,
   deleteIssueFromDB,
+  updateIssueFromDB,
 };
